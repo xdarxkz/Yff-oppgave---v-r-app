@@ -1,0 +1,175 @@
+/* Container */
+.weather {
+    place-self: center;
+    padding: 50px;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, #00c6ff, #0072ff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+
+.weather:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding-left: 25px;
+    background: #e9edc9;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input:focus {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    background: #e7f4d3;
+}
+
+.search-bar img {
+    width: 50px;
+    padding: 15px;
+    border-radius: 50%;
+    background: #0072ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-bar img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Weather Icon */
+.weather-icon {
+    width: 150px;
+    margin: 30px 0;
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease-in-out;
+}
+
+.weather-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Temperature and Location */
+.temperature {
+    color: #fff;
+    font-size: 80px;
+    line-height: 1;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+}
+
+.location {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Weather Data Cards */
+.weather-data {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.weather-data .col {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    width: 45%;
+    min-width: 160px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.weather-data .col:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.weather-data .col span {
+    display: block;
+    font-size: 16px;
+}
+
+.weather-data .col img {
+    width: 30px;
+    filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.2));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .weather-data {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .weather-data .col {
+        width: 100%;
+    }
+}
+
+/* Suggestions dropdown */
+.suggestions {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 200px; /* Limit height and add scroll */
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.suggestions li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    list-style-type: none; /* Remove bullet points */
+}
+
+.suggestions li:hover {
+    background-color: #e9edc9;
+    color: #333;
+}
+
+.suggestions li.active {
+    background-color: #d3d3d3; /* Slightly different hover color for active item */
+}
